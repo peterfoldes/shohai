@@ -1,0 +1,23 @@
+{
+  "name": "shohai",
+  "version": "1.0.0",
+  "description": "Character sheet site",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peterfoldes/shohai.git"
+  },
+  "author": "Peter Foldes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/peterfoldes/shohai/issues"
+  },
+  "homepage": "https://github.com/peterfoldes/shohai#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "mongoose": "^4.3.4"
+  }
+}
