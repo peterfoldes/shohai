@@ -2,8 +2,9 @@
   "name": "shohai",
   "version": "1.0.0",
   "description": "Character sheet site",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
+    "start": "node server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,7 +18,10 @@
   },
   "homepage": "https://github.com/peterfoldes/shohai#readme",
   "dependencies": {
-    "express": "^4.13.3",
-    "mongoose": "^4.3.4"
+    "body-parser": "latest",
+    "express": "latest",
+    "method-override": "latest",
+    "mongoose": "latest",
+    "morgan": "latest"
   }
 }
