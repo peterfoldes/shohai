@@ -7,6 +7,11 @@
         <base href="/">
 
         <title>Shohai</title>
+
+        <link rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+            integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+            crossorigin="anonymous">
     </head>
     <body ng-controller="CharacterController">
         <div ng-view></div>
@@ -14,7 +19,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-resource.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.js"></script>
+
         <script src="controllers/CharacterCtrl.js"></script>
+        <script src="services/CharacterService.js"></script>
         <script src="app.js"></script>
     </body>
 </html>

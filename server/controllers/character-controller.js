@@ -7,6 +7,14 @@ module.exports.create = function(request, response) {
             response.send(err);
         }
     
-        response.json(characters);
+        if (characters.length > 1) {
+            response.json(characters);
+        } else {
+            var c = new Character({
+                name: "Velch",
+                player: "Ulmar",
+            });
+            response.json([c]);
+        }
     });
 };

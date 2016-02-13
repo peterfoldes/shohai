@@ -1,9 +1,9 @@
-angular.module('shohaiApp', ['ngRoute', 'CharacterCtrl'])
+angular.module('shohaiApp', ['ngRoute', 'CharacterCtrl', 'CharacterService'])
     .config(function($routeProvider, $locationProvider) {
         $routeProvider
             .when('/', {
                 templateUrl: 'views/characters.html',
-                contoller: 'CharacterController as characters'
+                contoller: 'CharacterController'
             })
             .otherwise({
                 redirectTo:'/'

@@ -1,9 +1,11 @@
-function CharacterCtrl($scope) {
+function CharacterCtrl($scope, Characters) {
     $scope.title = 'Charater list';
-    $scope.characters = [
-        {name: "A"},
-        {name: "B"}
-    ];
+
+    Characters.getAll().success(function(chars, status) {
+        $scope.characters = chars;
+        console.log($scope.characters);
+    });
 }
 
-angular.module('CharacterCtrl', []).controller('CharacterController', CharacterCtrl);
+angular.module('CharacterCtrl', [])
+    .controller('CharacterController', CharacterCtrl);
