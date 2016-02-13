@@ -9,14 +9,18 @@ var methodOverride = require('method-override');
 var morgan = require('morgan');
 var db = require('./server/config/db');
 
+var port = process.env.PORT || 8080;
+var host = process.env.IP || 'localhost';
+
 // Configure our server
 mongoose.connect(db.url);
 app.use(morgan('dev'));
-// parse application/json 
+// Parse different inputs such as:
+// - application/json 
+// - application/vnd.api+json as json
+// - application/x-www-form-urlencoded
 app.use(bodyParser.json()); 
-// parse application/vnd.api+json as json
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); 
-// parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true })); 
 
 app.use(express.static(__dirname + '/public'));
@@ -25,10 +29,10 @@ app.use(express.static(__dirname + '/public'));
 require('./server/routes')(app);
 
 // Listen
-app.listen(process.env.PORT, process.env.IP);
+app.listen(port, host);
 
 // Put a friendly message on the terminal
-console.log("Server running at http://" + process.env.IP + ":" + process.env.PORT);
-
+console.log("Shohai server running at http://" + process.env.IP + ":" + process.env.PORT);
+console.log("Please enjoy and have a nice day.")
 // Expose app
 exports = module.exports = app;

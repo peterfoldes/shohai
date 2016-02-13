@@ -1,18 +1,12 @@
 var path = require('path');
-var Character = require('./models/character');
+var characterController = require(path.resolve("server/controllers/character-controller"));
 
 module.exports = function(app) {
-    app.get('/api/characters', function(req, res) {
-        Character.find(function(err, characters) {
-            if (err) {
-                res.send(err);
-            }
-      
-            res.json(characters);
-        });
-    });
+    app.get('/api/characters', characterController.create);
+    app.post('/api/characters', characterController.create);
 
+    // Frontend routes
     app.get('*', function(req, res) {
-        res.sendFile(path.resolve('public/views/index.html'));
+        res.sendFile(path.resolve('public/index.html'));
     });
-}
+};
